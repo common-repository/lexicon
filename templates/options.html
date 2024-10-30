@@ -1,0 +1,31 @@
+<div class="wrap">
+	<h2>Lexicon Options</h2>
+	<form name="options" method="post">
+		<input type="hidden" name="doSave" value="true" />
+		
+		<table class="form-table">
+		<tr valign="top">
+		<th scope="row">Footer display</th>
+		<td>
+			<p><label>
+				<input type="checkbox" name="showFooter" value="yes" <?=$checkStatus1?> />
+				Show footer	</label>
+			</p>
+		</td>
+		</tr>
+		<tr valign="top">
+		<th scope="row">SEO titles</th>
+		<td>
+			<p><label>
+				<input type="checkbox" name="seotitles" value="yes" <?=$checkStatus2?> />
+				Yes	</label>
+			</p>
+		</td>
+		</tr>
+		</table>
+
+		<p class="submit">
+			<input type="submit" value="Save Changes" />
+		</p>
+	</form>
+</div>

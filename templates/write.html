@@ -1,0 +1,46 @@
+<script type='text/javascript'>
+	/* <![CDATA[ */
+		wpTinyMCEConfig = {
+			defaultEditor: "html"
+		}
+	/* ]]> */
+</script>
+<script type='text/javascript' src='./js/editor.js?ver=20080325'></script>
+<script type='text/javascript' src='../wp-includes/js/tinymce/tiny_mce_config.php?ver=20080327'></script>
+		
+<form name="submit" method="post" action="<?=$action?>">
+<input type="hidden" name="action" value="save" />
+		
+<div class="wrap">
+	<h2><?=$title?></h2>
+	<div id="poststuff">
+		<div class="submitbox" id="submitpost">
+		<div id="previewview">
+			<div style="font-weight:bold;color:#ffffff;font-size:16px">Action</div>
+		</div>
+		<div class="inside">
+			<br />
+			Press the button to save your lexicon entry.
+		</div>
+		<p class="submit">
+			<input type="hidden" name="user-id" id="user-id" value="" />
+			<input name="publish" type="submit" class="button button-highlighted" id="publish" tabindex="5" accesskey="p" value="Save" />
+			<br class="clear" />
+			<span id="autosave"></span>
+		</p>		
+	</div>		
+	<div id="post-body">
+		<div id="titlediv">
+			<h3>Keyword</h3>
+			<div id="titlewrap">
+				<input type="text" name="post_title" size="30" tabindex="1" value="<?=$keyword?>" id="title" autocomplete="off" />
+			</div>
+		</div>	
+		<div id="<?php echo user_can_richedit() ? 'postdivrich' : 'postdiv'; ?>" class="postarea">
+			<h3>Post</h3>
+			<?php the_editor($content); ?>
+		</div>
+	</div>
+</div>
+
+</form>
